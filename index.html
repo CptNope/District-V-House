@@ -397,7 +397,7 @@ footer.foot .credit{ margin-left:auto; }
 
 <header class="sash">
   <a class="badge-link" href="#top" aria-label="District V House home">
-    <img class="badge" src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/District-3.png/:/rs=w:200,m" alt="" width="64" height="64">
+    <img class="badge" src="assets/photos/District-3.png" alt="" width="64" height="64">
     <span class="badge-word">District V House<small>&amp; District V Design</small></span>
   </a>
   <nav class="nav" aria-label="Main">
@@ -433,9 +433,9 @@ footer.foot .credit{ margin-left:auto; }
     </div>
 
     <div class="panes">
-      <figure class="pane display-pane" style="margin:0"><img data-slot="0" src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/Christmas%202026.jpeg/:/rs=w:1100,m" alt="A room of white and gold Christmas trees and displays at District V House" loading="eager" fetchpriority="high"><figcaption data-cap="0">Christmas 2026: the North Pole</figcaption></figure>
-      <figure class="pane display-pane" style="margin:0"><img data-slot="1" src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/IMG_7144.jpeg/:/rs=w:1100,m" alt="A doorway wrapped in red and green Christmas decorations at District V House" loading="eager"><figcaption data-cap="1">Room after room of Christmas</figcaption></figure>
-      <figure class="pane display-pane" style="margin:0"><img data-slot="2" src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/IMG_5077.jpeg/:/rs=w:1100,m" alt="Fresh greenery, flowers and red bows for the Wreath Bar at District V House" loading="eager"><figcaption data-cap="2">The Wreath Bar is back</figcaption></figure>
+      <figure class="pane display-pane" style="margin:0"><img data-slot="0" src="assets/photos/Christmas-2026.jpeg" alt="A room of white and gold Christmas trees and displays at District V House" loading="eager" fetchpriority="high"><figcaption data-cap="0">Christmas 2026: the North Pole</figcaption></figure>
+      <figure class="pane display-pane" style="margin:0"><img data-slot="1" src="assets/photos/IMG_7144.jpeg" alt="A doorway wrapped in red and green Christmas decorations at District V House" loading="eager"><figcaption data-cap="1">Room after room of Christmas</figcaption></figure>
+      <figure class="pane display-pane" style="margin:0"><img data-slot="2" src="assets/photos/IMG_5077.jpeg" alt="Fresh greenery, flowers and red bows for the Wreath Bar at District V House" loading="eager"><figcaption data-cap="2">The Wreath Bar is back</figcaption></figure>
     </div>
 
     <div class="bulkhead">
@@ -465,7 +465,7 @@ footer.foot .credit{ margin-left:auto; }
   </section>
 
   <section class="collective" id="collective" aria-labelledby="collective-h">
-    <figure class="photo" style="margin:0"><img src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/IMG_9929.jpeg/:/rs=w:1400,m" alt="A vendor space at District V House with vintage wooden furniture, a birdcage and ceramics" loading="lazy"></figure>
+    <figure class="photo" style="margin:0"><img src="assets/photos/IMG_9929.jpeg" alt="A vendor space at District V House with vintage wooden furniture, a birdcage and ceramics" loading="lazy"></figure>
     <div class="copy">
       <h2 id="collective-h">One floor, a whole collective.</h2>
       <blockquote class="quote">
@@ -500,13 +500,13 @@ footer.foot .credit{ margin-left:auto; }
       </div>
     </div>
     <figure class="photo" style="margin:0">
-      <img src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/ig_17947734818296880.jpg/:/rs=w:1400,m" alt="A styled room at District V House with a black and white striped rug, sofa and layered decor" loading="lazy">
+      <img src="assets/photos/ig_17947734818296880.jpg" alt="A styled room at District V House with a black and white striped rug, sofa and layered decor" loading="lazy">
       <figcaption>Residential &amp; commercial interior design</figcaption>
     </figure>
   </section>
 
   <section class="stroll" id="stroll" aria-labelledby="stroll-h">
-    <figure class="night" style="margin:0"><img src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/IMG_7915.jpeg/:/rs=w:1500,m" alt="The District V House courtyard with the beverage trailer and a drink in hand" loading="lazy"></figure>
+    <figure class="night" style="margin:0"><img src="assets/photos/IMG_7915.jpeg" alt="The District V House courtyard with the beverage trailer and a drink in hand" loading="lazy"></figure>
     <div class="card">
       <h2 class="gilt" id="stroll-h">Christmas at House</h2>
       <ul class="events">
@@ -557,7 +557,7 @@ footer.foot .credit{ margin-left:auto; }
 </main>
 
 <footer class="foot">
-  <img class="badge" src="https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/District-3.png/:/rs=w:200,m" alt="" width="46" height="46">
+  <img class="badge" src="assets/photos/District-3.png" alt="" width="46" height="46">
   <p>© <span id="yr">2026</span> District V House &amp; District V Design · Sutton, Massachusetts</p>
   <p>A little unexpected. A lot extraordinary.</p>
   <p class="credit"><a href="brand/">Brand book</a> · Concept by Jeremy Anderson Tech · Photos: District V House</p>
@@ -570,7 +570,7 @@ footer.foot .credit{ margin-left:auto; }
 
 <script>
 (() => {
-  const IMG = f => `https://img1.wsimg.com/isteam/ip/d721429c-11dc-4b02-8fed-165d735cdef7/${f}/:/rs=w:1100,m`;
+  const IMG = f => `assets/photos/${f.replace(/%20/g, '-')}`;
   const SEASONS = {
     holiday: { name: 'Christmas 2026: the North Pole', panes: [
       ['Christmas%202026.jpeg', 'A room of white and gold Christmas trees and displays at District V House', 'Christmas 2026: the North Pole'],
