@@ -6,18 +6,19 @@ By [Jeremy Anderson Tech](https://jeremyanderson.tech).
 
 | | |
 |---|---|
-| **Site** | [`index.html`](index.html), a single self-contained page |
-| **Brand book** | [`brand/`](brand/index.html), with live component previews and the full photo library |
-| **Design system** | [`design-system/`](design-system): `tokens.json` (source), `tokens.css` (generated), `README.md` (brand book), `components/`, `cover/` |
+| **Overview** | [`index.html`](index.html): the pitch landing page, with what's wrong today, a map of every piece of her current content, and audit results |
+| **Example site** | [`site/`](site/index.html): Home, Christmas at House, The Shop, Vendors, Privacy, Terms; shared `site.css` and `site.js` |
+| **Brand book** | [`brand/`](brand/index.html): story, voice, logo, photography and the full photo library |
+| **Design system** | [`design-system/`](design-system/index.html): HTML reference (color, type, layout, live components) plus `tokens.json` (source), `tokens.css` (generated), `README.md`, `components/`, `cover/` |
 | **Docs** | [`docs/`](docs): product brief, DESIGN.md, direction contract, content audit, responsive audit, [design taste audit](docs/design-taste-audit.md), [WCAG 2.2 AA audit](docs/wcag-aa-audit.md), WordPress notes |
 | **Fonts** | [`assets/fonts/`](assets/fonts): Gloock and Hanken Grotesk, self-hosted (SIL OFL) |
 | **Photos** | [`assets/photos/`](assets/photos): the store's own photos, synced from its GoDaddy site |
 
 ## GitHub Pages
 
-Settings → Pages → Source: **Deploy from a branch**, Branch: **main**, folder **/ (root)**. The site is served at `https://cptnope.github.io/District-V-House/` and the brand book at `/brand/`.
+Settings → Pages → Source: **Deploy from a branch**, Branch: **main**, folder **/ (root)**. The overview is served at `https://cptnope.github.io/District-V-House/`, the example site at `/site/`, the brand book at `/brand/` and the design system at `/design-system/`.
 
-Both pages carry `<meta name="robots" content="noindex">` so the pitch doesn't compete with the store's real site in search. Remove it if this becomes the live site.
+Every page carries `<meta name="robots" content="noindex">` so the pitch doesn't compete with the store's real site in search. Remove it if this becomes the live site.
 
 ## Photos
 
@@ -31,6 +32,6 @@ To run it locally instead:
 
 ## Seasons
 
-The site picks a season from the date in Eastern time (Holiday Nov–Dec, Winter Jan–Mar, Garden Apr–Jul, Harvest Aug–Oct); visitors can switch with the swatches. Colors come from `design-system/tokens.json`. After editing it, run `python3 scripts/build-tokens-css.py`. The site inlines its own copy of the tokens, so update `index.html` too.
+The site picks a season from the date in Eastern time (Holiday Nov–Dec, Winter Jan–Mar, Garden Apr–Jul, Harvest Aug–Oct); visitors can switch with the swatches. Colors come from `design-system/tokens.json`. After editing it, run `python3 scripts/build-tokens-css.py`. The example site keeps its own copy of the season tokens in `site/site.css`, so update that too.
 
 Photos © District V House. Design and code © Jeremy Anderson Tech.

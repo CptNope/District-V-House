@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>District V House · Brand Book &amp; Design System</title>
+<title>District V House · Brand Book</title>
+<meta name="description" content="Brand book for District V House: story, voice, fact sheet, logo, photography, iconography and motion.">
 <link rel="stylesheet" href="../assets/fonts/fonts.css">
 <link rel="stylesheet" href="../design-system/tokens.css">
 <style>
@@ -82,24 +83,35 @@ th,td{text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid color-mix(i
 .icons svg{width:48px;height:48px;color:var(--glass);display:block;margin:0 auto 10px}
 footer{background:var(--sash);color:var(--mist);padding:30px max(20px,5vw);font-size:.9375rem}
 @media(max-width:760px){.cover{grid-template-columns:1fr}.type-row{grid-template-columns:1fr;gap:6px}.top nav{display:none}}
+
+.skip-link{position:absolute;left:12px;top:-80px;z-index:50;background:var(--leaf);color:var(--sash);padding:10px 16px;font-weight:600}
+.skip-link:focus{top:12px}
+.top-home{display:flex;align-items:center;gap:14px;text-decoration:none}
+.top nav a[aria-current="page"]{color:var(--leaf)}
+.onpage{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px}
+.onpage a{color:var(--frost);min-height:44px;display:inline-flex;align-items:center}
+.next{background:var(--glass);color:var(--frost);padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.next p{margin:0;max-width:52ch}
+.next h2{margin:0 0 6px;font-family:var(--font-display);font-weight:400;color:var(--leaf);font-size:clamp(1.8rem,3vw,2.6rem)}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="top">
-  <img src="../assets/photos/District-3.png" alt="District V House logo">
-  <b>Brand Book</b>
-  <nav aria-label="Sections"><a href="#story">Story</a><a href="#voice">Voice</a><a href="#color">Color</a><a href="#type">Type</a><a href="#layout">Layout</a><a href="#components">Components</a><a href="#logo">Logo</a><a href="#photos">Photography</a><a href="#files">Files</a></nav>
+  <a class="top-home" href="../"><img src="../assets/photos/District-3.png" alt=""><b>District V House</b></a>
+  <nav aria-label="Pitch"><a href="../">Overview</a><a href="../site/">Example site</a><a href="../brand/" aria-current="page">Brand book</a><a href="../design-system/">Design system</a></nav>
 </header>
 <section class="cover" aria-label="Cover">
   <div>
     <h1>District V House</h1>
     <p class="h1-sub">Brand book &amp; design system</p>
     <p>Brand book and design system for the website: a designer's vendor-collective home store in the historic Manchaug Company Store, Sutton, Massachusetts, and its sister studio District V Design.</p>
-    <div class="links"><a class="btn gilt" href="../">View the site</a><a class="btn line" href="../design-system/tokens.json">tokens.json</a></div>
+    <div class="links"><a class="btn gilt" href="../site/">View the example site</a><a class="btn line" href="../design-system/">Design system</a></div>
+    <nav class="onpage" aria-label="On this page"><a href="#story">Story</a><a href="#voice">Voice</a><a href="#logo">Logo</a><a href="#photos">Photography</a><a href="#iconography">Icons &amp; motion</a></nav>
   </div>
   <div class="cover-wrap" aria-hidden="true"><iframe class="cover-frame" src="../design-system/cover/preview.html" title="Design system cover" scrolling="no" tabindex="-1"></iframe></div>
 </section>
-<main>
+<main id="main">
 <section id="story">
   <h2>The idea: the shop window</h2>
   <p class="lede">The site works like the storefront of an 1800s village store seen at dusk: a transom with sign-painted gilt lettering, lit display panes divided by thick sash bars, and a painted bulkhead under the window that holds the hours and the door. Jamie restyles the whole store every season, so the window is repainted every season too. It refuses cream-and-script farmhouse and cold white minimalism. Tagline: <strong>A little unexpected. A lot extraordinary.</strong></p>
@@ -125,53 +137,6 @@ footer{background:var(--sash);color:var(--mist);padding:30px max(20px,5vw);font-
     <div class="card"><h3><span class="do">Say</span></h3><ul><li>Come shop.</li><li>Never the same store twice.</li><li>Born in District 5.</li><li>One floor, a whole collective.</li><li>Shop. Sip. Stay merry.</li></ul></div>
     <div class="card"><h3><span class="dont">Avoid</span></h3><ul><li>Farmhouse clichés: gather, blessed, live laugh love</li><li>Luxury-speak: elevated, bespoke curation</li><li>Invented vendors, prices, reviews or dates</li><li>Adjectives where a noun works (tins, lamps, wreaths)</li></ul></div>
   </div>
-</section>
-<section id="color">
-  <h2>Color: the season is the palette</h2>
-  <p class="lede">Every color token has four themes. The site picks the season from the date in Eastern time (Holiday Nov–Dec, Winter Jan–Mar, Garden Apr–Jul, Harvest Aug–Oct) and visitors can restyle it. Strategy: committed color in whole regions, not accents.</p>
-  <div class="seasons"><article class="season" style="--g:#0D2A24;--l:#DDB65C;--o:#B0142F;--oo:#F3F5F2;--f:#EFF3F0;--s:#06110E;--sh:#6B4A16">
-  <div class="season-face"><span class="season-name">Holiday</span><span class="season-months">Nov–Dec</span><span class="season-orn">Open</span></div>
-  <ul class="swatches"><li><span class="chip" style="background:#0D2A24"></span><b>glass</b><code>#0D2A24</code></li><li><span class="chip" style="background:#163D34"></span><b>glass-2</b><code>#163D34</code></li><li><span class="chip" style="background:#06110E"></span><b>sash</b><code>#06110E</code></li><li><span class="chip" style="background:#DDB65C"></span><b>leaf</b><code>#DDB65C</code></li><li><span class="chip" style="background:#6B4A16"></span><b>shade</b><code>#6B4A16</code></li><li><span class="chip" style="background:#B0142F"></span><b>ornament</b><code>#B0142F</code></li><li><span class="chip" style="background:#F3F5F2"></span><b>on-ornament</b><code>#F3F5F2</code></li><li><span class="chip" style="background:#EFF3F0"></span><b>frost</b><code>#EFF3F0</code></li><li><span class="chip" style="background:#AFC4BB"></span><b>mist</b><code>#AFC4BB</code></li></ul>
-  <table class="contrast"><caption>Contrast</caption><tr><td>Body text on glass</td><td class="num">13.6:1</td><td>AA</td></tr><tr><td>Gilt on glass</td><td class="num">7.9:1</td><td>AA</td></tr><tr><td>Muted text on glass</td><td class="num">8.3:1</td><td>AA</td></tr><tr><td>Text on the season band</td><td class="num">6.4:1</td><td>AA</td></tr><tr><td>Text on the gold Visit band</td><td class="num">10.0:1</td><td>AA</td></tr><tr><td>Text on frost</td><td class="num">17.1:1</td><td>AA</td></tr></table>
-</article><article class="season" style="--g:#0F1D33;--l:#CBD4DF;--o:#3E8FB8;--oo:#06101C;--f:#F0F3F7;--s:#070C16;--sh:#4A5568">
-  <div class="season-face"><span class="season-name">Winter</span><span class="season-months">Jan–Mar</span><span class="season-orn">Open</span></div>
-  <ul class="swatches"><li><span class="chip" style="background:#0F1D33"></span><b>glass</b><code>#0F1D33</code></li><li><span class="chip" style="background:#1A2C49"></span><b>glass-2</b><code>#1A2C49</code></li><li><span class="chip" style="background:#070C16"></span><b>sash</b><code>#070C16</code></li><li><span class="chip" style="background:#CBD4DF"></span><b>leaf</b><code>#CBD4DF</code></li><li><span class="chip" style="background:#4A5568"></span><b>shade</b><code>#4A5568</code></li><li><span class="chip" style="background:#3E8FB8"></span><b>ornament</b><code>#3E8FB8</code></li><li><span class="chip" style="background:#06101C"></span><b>on-ornament</b><code>#06101C</code></li><li><span class="chip" style="background:#F0F3F7"></span><b>frost</b><code>#F0F3F7</code></li><li><span class="chip" style="background:#A9B6C8"></span><b>mist</b><code>#A9B6C8</code></li></ul>
-  <table class="contrast"><caption>Contrast</caption><tr><td>Body text on glass</td><td class="num">15.2:1</td><td>AA</td></tr><tr><td>Gilt on glass</td><td class="num">11.3:1</td><td>AA</td></tr><tr><td>Muted text on glass</td><td class="num">8.2:1</td><td>AA</td></tr><tr><td>Text on the season band</td><td class="num">5.3:1</td><td>AA</td></tr><tr><td>Text on the gold Visit band</td><td class="num">13.1:1</td><td>AA</td></tr><tr><td>Text on frost</td><td class="num">17.6:1</td><td>AA</td></tr></table>
-</article><article class="season" style="--g:#0C3A3A;--l:#E8C25E;--o:#E0507A;--oo:#1B0710;--f:#F0F5F2;--s:#042020;--sh:#6E5212">
-  <div class="season-face"><span class="season-name">Garden</span><span class="season-months">Apr–Jul</span><span class="season-orn">Open</span></div>
-  <ul class="swatches"><li><span class="chip" style="background:#0C3A3A"></span><b>glass</b><code>#0C3A3A</code></li><li><span class="chip" style="background:#145050"></span><b>glass-2</b><code>#145050</code></li><li><span class="chip" style="background:#042020"></span><b>sash</b><code>#042020</code></li><li><span class="chip" style="background:#E8C25E"></span><b>leaf</b><code>#E8C25E</code></li><li><span class="chip" style="background:#6E5212"></span><b>shade</b><code>#6E5212</code></li><li><span class="chip" style="background:#E0507A"></span><b>ornament</b><code>#E0507A</code></li><li><span class="chip" style="background:#1B0710"></span><b>on-ornament</b><code>#1B0710</code></li><li><span class="chip" style="background:#F0F5F2"></span><b>frost</b><code>#F0F5F2</code></li><li><span class="chip" style="background:#A3C6C1"></span><b>mist</b><code>#A3C6C1</code></li></ul>
-  <table class="contrast"><caption>Contrast</caption><tr><td>Body text on glass</td><td class="num">11.3:1</td><td>AA</td></tr><tr><td>Gilt on glass</td><td class="num">7.3:1</td><td>AA</td></tr><tr><td>Muted text on glass</td><td class="num">6.8:1</td><td>AA</td></tr><tr><td>Text on the season band</td><td class="num">5.2:1</td><td>AA</td></tr><tr><td>Text on the gold Visit band</td><td class="num">10.0:1</td><td>AA</td></tr><tr><td>Text on frost</td><td class="num">15.5:1</td><td>AA</td></tr></table>
-</article><article class="season" style="--g:#2A1512;--l:#E09A4C;--o:#E4B23A;--oo:#1E0E05;--f:#F4F0EC;--s:#140908;--sh:#6A3A12">
-  <div class="season-face"><span class="season-name">Harvest</span><span class="season-months">Aug–Oct</span><span class="season-orn">Open</span></div>
-  <ul class="swatches"><li><span class="chip" style="background:#2A1512"></span><b>glass</b><code>#2A1512</code></li><li><span class="chip" style="background:#3D1F19"></span><b>glass-2</b><code>#3D1F19</code></li><li><span class="chip" style="background:#140908"></span><b>sash</b><code>#140908</code></li><li><span class="chip" style="background:#E09A4C"></span><b>leaf</b><code>#E09A4C</code></li><li><span class="chip" style="background:#6A3A12"></span><b>shade</b><code>#6A3A12</code></li><li><span class="chip" style="background:#E4B23A"></span><b>ornament</b><code>#E4B23A</code></li><li><span class="chip" style="background:#1E0E05"></span><b>on-ornament</b><code>#1E0E05</code></li><li><span class="chip" style="background:#F4F0EC"></span><b>frost</b><code>#F4F0EC</code></li><li><span class="chip" style="background:#CFB6A6"></span><b>mist</b><code>#CFB6A6</code></li></ul>
-  <table class="contrast"><caption>Contrast</caption><tr><td>Body text on glass</td><td class="num">15.3:1</td><td>AA</td></tr><tr><td>Gilt on glass</td><td class="num">7.3:1</td><td>AA</td></tr><tr><td>Muted text on glass</td><td class="num">9.0:1</td><td>AA</td></tr><tr><td>Text on the season band</td><td class="num">9.6:1</td><td>AA</td></tr><tr><td>Text on the gold Visit band</td><td class="num">8.3:1</td><td>AA</td></tr><tr><td>Text on frost</td><td class="num">17.3:1</td><td>AA</td></tr></table>
-</article></div>
-  <table style="margin-top:32px"><thead><tr><th>Token</th><th>Use</th></tr></thead><tbody><tr><td><code>--glass</code></td><td>Window glass. The main dark ground: transom, hero panes, Design Studio band. Frost and leaf text sit on it (≥8:1).</td></tr><tr><td><code>--glass-2</code></td><td>Second glass tone: the bulkhead under the window, event card, closed-sign fill.</td></tr><tr><td><code>--sash</code></td><td>Painted window sash. Mullions between every section and pane, header, footer. Never a text color on glass.</td></tr><tr><td><code>--leaf</code></td><td>Gilt (gold leaf; silver leaf in winter, copper in harvest). Sign-painted lettering, primary buttons, keylines, the Visit band ground. Sash text on it.</td></tr><tr><td><code>--shade</code></td><td>The painted drop shade under gilt lettering. Decorative only: never text.</td></tr><tr><td><code>--ornament</code></td><td>Season accent: cranberry, ice, peony, mustard. The season band and the OPEN sign. Use on-ornament for text on it.</td></tr><tr><td><code>--on-ornament</code></td><td>Text on ornament. Light in holiday, dark in the other seasons (each ≥4.5:1).</td></tr><tr><td><code>--frost</code></td><td>Frosted white. Body text on glass; the light ground of the Collective section (sash text on it).</td></tr><tr><td><code>--mist</code></td><td>Muted text on glass and glass-2: secondary lines, labels, captions (≥7:1 on glass).</td></tr></tbody></table>
-</section>
-<section id="type">
-  <h2>Type</h2>
-  <p class="lede"><b>Gloock</b> is the sign-painter's gilt and matches the serif HOUSE badge: names, headings, captions, quotes, status. <b>Hanken Grotesk</b> sets everything else, in sentence case. No italics, no tracked uppercase labels, no eyebrow labels above headings, no gradient text.</p>
-  <div class="type-row"><div class="type-meta"><b>sign-arch</b><span>116px / 1 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:72px;line-height:1.15;font-weight:400;">District V House</div></div><div class="type-row"><div class="type-meta"><b>display-xl</b><span>96px / 0.92 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:72px;line-height:1.15;font-weight:400;">Come shop.</div></div><div class="type-row"><div class="type-meta"><b>heading</b><span>64px / 1 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:64px;line-height:1.15;font-weight:400;">Born in District 5.</div></div><div class="type-row"><div class="type-meta"><b>quote</b><span>32px / 1.2 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:32px;line-height:1.15;font-weight:400;">Alone we are but one drop.</div></div><div class="type-row"><div class="type-meta"><b>pane-caption</b><span>30px / 1.1 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:30px;line-height:1.15;font-weight:400;">The Wreath Bar is back</div></div><div class="type-row"><div class="type-meta"><b>status</b><span>34px / 1.1 · 400</span><span>display</span></div><div class="type-sample" style="font-family:&quot;Gloock&quot;, &quot;Didot&quot;, &quot;Bodoni 72&quot;, serif;font-size:34px;line-height:1.15;font-weight:400;">Opens Thursday at 10 am</div></div><div class="type-row"><div class="type-meta"><b>lede</b><span>20px / 29px · 400</span><span>text</span></div><div class="type-sample" style="font-family:&quot;Hanken Grotesk&quot;, system-ui, sans-serif;font-size:20px;line-height:1.15;font-weight:400;">Antique, vintage, old, new &amp; handmade home goods.</div></div><div class="type-row"><div class="type-meta"><b>body</b><span>17px / 27px · 400</span><span>text</span></div><div class="type-sample" style="font-family:&quot;Hanken Grotesk&quot;, system-ui, sans-serif;font-size:17px;line-height:1.15;font-weight:400;">Every room tells a different story, and the whole store is restyled every season.</div></div><div class="type-row"><div class="type-meta"><b>small</b><span>15px / 24px · 400</span><span>text</span></div><div class="type-sample" style="font-family:&quot;Hanken Grotesk&quot;, system-ui, sans-serif;font-size:15px;line-height:1.15;font-weight:400;">In the historic Manchaug Company Store, overlooking the Mumford River.</div></div><div class="type-row"><div class="type-meta"><b>button</b><span>16px / 16px · 600</span><span>text</span></div><div class="type-sample" style="font-family:&quot;Hanken Grotesk&quot;, system-ui, sans-serif;font-size:16px;line-height:1.15;font-weight:600;">Get directions</div></div>
-</section>
-<section id="layout">
-  <h2>Layout, spacing &amp; shape</h2>
-  <p class="lede">The page is one storefront: header sash, transom, three panes, bulkhead, then full-width bands, each divided by a mullion-wide sash bar. The first viewport always shows the name, the season's panes, today's hours and Get directions. On phones a Directions / Call dock appears whenever those buttons scroll away.</p>
-  <table><thead><tr><th>Token</th><th>Value</th><th><span class="sr-only">Scale</span></th><th>Use</th></tr></thead><tbody><tr><td><code>--space-2</code></td><td class="num">8px</td><td><span class="bar" style="width:8px"></span></td><td>Icon to label gap, tight stacks.</td></tr><tr><td><code>--space-3</code></td><td class="num">12px</td><td><span class="bar" style="width:12px"></span></td><td>Between buttons; tag gaps.</td></tr><tr><td><code>--mullion</code></td><td class="num">14px</td><td><span class="bar" style="width:14px"></span></td><td>Sash bar width between panes and between every section (fluid from 8px on phones).</td></tr><tr><td><code>--space-5</code></td><td class="num">24px</td><td><span class="bar" style="width:24px"></span></td><td>Paragraph to controls; caption inset.</td></tr><tr><td><code>--space-6</code></td><td class="num">32px</td><td><span class="bar" style="width:32px"></span></td><td>Bulkhead padding; card padding.</td></tr><tr><td><code>--gutter</code></td><td class="num">72px</td><td><span class="bar" style="width:72px"></span></td><td>Page side margin on desktop (fluid down to 20px).</td></tr><tr><td><code>--section</code></td><td class="num">112px</td><td><span class="bar" style="width:112px"></span></td><td>Vertical padding of full-width bands (fluid down to 48px).</td></tr></tbody></table>
-  <table style="margin-top:24px"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td><code>--radius-sm</code></td><td class="num">2px</td><td>Chips, focus rings, today badge.</td></tr><tr><td><code>--radius-md</code></td><td class="num">3px</td><td>Buttons, season swatches. Painted wood, not pills.</td></tr><tr><td><code>--radius-sign</code></td><td class="num">4px</td><td>The hanging OPEN/CLOSED sign.</td></tr></tbody></table>
-</section>
-<section id="components">
-  <h2>Components</h2>
-  <div class="comps"><article class="comp"><h3>Button</h3><p>Three painted buttons: **gilt** (primary, `leaf` fill, `sash` text, `shadow-button`), **line** (secondary on glass, 1.5px `leaf` border, `frost` text) and **dark** (on the gold Visit band, `sash` fill, `leaf` text). Radius `radius-md`, 15×22px padding, `button` text style, an 18px line icon on the left.
-
-One gilt button per region. The verb names the action (&quot;Get directions&quot;, &quot;Start a design project&quot;). Phone numbers are buttons too: a `tel:` link showing the number. The consumer provides the href and icon.</p><iframe src="../design-system/components/Button/preview.html" title="Button preview" style="height:150px"></iframe></article><article class="comp"><h3>OpenSign</h3><p>The hanging OPEN/CLOSED sign on two chains, top right of the header sash. It reads the real time in America/New_York against the store hours (Thu–Sat 10–5, Sun 11–4) and shows **Open · until 5 pm** on `ornament` or **Closed · Opens Thursday at 10 am** on `glass-2`. 2px `leaf` border, `radius-sign`, `shadow-sign`, `status` word in Gloock. It swings once on load (off under reduced motion), links to the Visit section, and is `aria-live=&quot;polite&quot;`.
-
-Keep hours in one place in code and in the schema.org data.</p><iframe src="../design-system/components/OpenSign/preview.html" title="OpenSign preview" style="height:150px"></iframe></article><article class="comp"><h3>PriceTag</h3><p>A string tag, like the ones on a vendor&#x27;s booth, for the categories and vendor names in the Collective section. `leaf` tinted 30% into `frost`, `sash` text, a hole punched at the left, a notched left edge. Tags in a row tilt a degree or two at irregular intervals, the way real tags hang.
-
-Use on `frost` ground only. Words, not sentences. Never use it as a button.</p><iframe src="../design-system/components/PriceTag/preview.html" title="PriceTag preview" style="height:120px"></iframe></article><article class="comp"><h3>GiltLettering</h3><p>Sign-painted gold leaf: Gloock in `leaf`, a 1px lighter keyline on top, and a `gilt-shade` drop shade in the season&#x27;s `shade`. For the arched name in the transom (an SVG textPath on a shallow quadratic arc, a shade copy offset 3,4 underneath), headings on glass, pane captions and the Stroll title.
-
-Only on `glass`, `glass-2` or photo panes under the glass scrim. Never on frost or gold. Never gradient-filled.</p><iframe src="../design-system/components/GiltLettering/preview.html" title="GiltLettering preview" style="height:210px"></iframe></article><article class="comp"><h3>SeasonSwatch</h3><p>The &quot;Restyle the window&quot; control: four toggle buttons (Holiday, Winter, Garden, Harvest), each with a three-chip strip (glass, leaf, ornament of that season), the season name and its months. `aria-pressed` marks the current one. Clicking dims the window panes, swaps the season theme and photos, and brings the lights back up.
-
-Sits on the `ornament` band in `on-ornament` color. Two columns on phones.</p><iframe src="../design-system/components/SeasonSwatch/preview.html" title="SeasonSwatch preview" style="height:160px"></iframe></article></div>
 </section>
 <section id="logo">
   <h2>Logo</h2>
@@ -199,14 +164,7 @@ Sits on the `ornament` band in `on-ornament` color. Two columns on phones.</p><i
     <figure><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><figcaption>Menu</figcaption></figure>
   </div>
 </section>
-<section id="files">
-  <h2>Files</h2>
-  <div class="cols">
-    <div class="card"><h3>Tokens</h3><p><a href="../design-system/tokens.json">tokens.json</a> (source of truth) and <a href="../design-system/tokens.css">tokens.css</a> (generated; one block per season, set <code>data-season</code> on <code>&lt;html&gt;</code>).</p></div>
-    <div class="card"><h3>Brand book (Markdown)</h3><p><a href="https://github.com/CptNope/District-V-House/blob/main/design-system/README.md">design-system/README.md</a> plus component guidelines in <code>design-system/components/</code>.</p></div>
-    <div class="card"><h3>Project docs</h3><p><a href="https://github.com/CptNope/District-V-House/tree/main/docs">docs/</a>: product brief, DESIGN.md, direction contract, content audit, responsive audit and the WordPress notes.</p></div>
-  </div>
-</section>
+<section id="next-ds"><div class="next"><div><h2>Design system</h2><p>Season palettes with contrast checks, type scale, spacing, the five components with live previews, and the token files.</p></div><a class="btn gilt" href="../design-system/">Open the design system</a></div></section>
 </main>
 <footer>District V House &amp; District V Design · Sutton, Massachusetts · Brand book and site concept by Jeremy Anderson Tech · Photos © District V House</footer>
 <script>

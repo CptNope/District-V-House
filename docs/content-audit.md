@@ -26,16 +26,20 @@ Captured 2026-11-23 from the live GoDaddy site (reachable only past a certificat
 
 ## Where each item lives in the new site
 
-| Content | New site |
+The example site is now multi-page, mirroring her navigation. The full section-by-section map is on the [overview page](../index.html) (live at https://cptnope.github.io/District-V-House/).
+
+| Her page / content | Example site |
 |---|---|
-| Hours, address, phone, directions | Header OPEN sign (live), window bulkhead, Visit band, phone dock, schema.org data |
-| Company Store, Mumford River, Route 146 | Bulkhead lede, Visit band |
-| North Pole / Christmas 2026, fifth Christmas | Holiday season panes and season band |
-| Small Business Saturday, Après Shop, Chain of Lights, Manchaug Stroll, Wreath Bar | "Christmas at House" events section |
-| Vendor policy and wait list | Collective section |
-| Tagline | Footer |
-| Contact form, Privacy, Terms | Not in the static pitch: WordPress build (form plugin, policy pages) |
-| Online shop | Decide with Jamie: WooCommerce or drop it |
+| Home: hours, address, directions | `site/` header OPEN sign (live), window bulkhead, Visit band, phone dock, schema.org data |
+| Home: events, North Pole story, experience list, Wreath Bar, Why shop with us, holiday hours | `site/christmas.html` (full text), summary on `site/#stroll` |
+| Home: Open House (Oct 31) and closure notice | `site/christmas.html` → "Earlier this season" (kept, marked past) |
+| Home: About Us / The Store | `site/the-shop.html#about`, `site/#visit` |
+| Vendors (all policy text) | `site/vendors.html`, summary on `site/#collective` |
+| The Shop: text, 22-photo gallery, contact form, in person | `site/the-shop.html` (form composes an email to districtvdesign@gmail.com) |
+| Holiday's at House | `site/christmas.html` |
+| Privacy Policy, Terms | `site/privacy.html`, `site/terms.html` ("coming soon", as on her site) |
+| Tagline | Every footer |
+| Online shop (empty) | Not rebuilt. Decide with Jamie: WooCommerce or drop it |
 
 ## Still to confirm with Jamie
 - Whether the District V Designer Wall Decals ($50, from the old districtvdesign.com shop) are still sold.
