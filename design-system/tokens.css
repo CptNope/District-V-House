@@ -1,0 +1,62 @@
+/* District V House — generated from tokens.json by scripts/build-tokens-css.py. Do not edit by hand. */
+:root, [data-season="holiday"] {
+  --glass: #0D2A24;
+  --glass-2: #163D34;
+  --sash: #06110E;
+  --leaf: #DDB65C;
+  --shade: #6B4A16;
+  --ornament: #B0142F;
+  --on-ornament: #F3F5F2;
+  --frost: #EFF3F0;
+  --mist: #AFC4BB;
+}
+[data-season="winter"] {
+  --glass: #0F1D33;
+  --glass-2: #1A2C49;
+  --sash: #070C16;
+  --leaf: #CBD4DF;
+  --shade: #4A5568;
+  --ornament: #3E8FB8;
+  --on-ornament: #06101C;
+  --frost: #F0F3F7;
+  --mist: #A9B6C8;
+}
+[data-season="garden"] {
+  --glass: #0C3A3A;
+  --glass-2: #145050;
+  --sash: #042020;
+  --leaf: #E8C25E;
+  --shade: #6E5212;
+  --ornament: #E0507A;
+  --on-ornament: #1B0710;
+  --frost: #F0F5F2;
+  --mist: #A3C6C1;
+}
+[data-season="harvest"] {
+  --glass: #2A1512;
+  --glass-2: #3D1F19;
+  --sash: #140908;
+  --leaf: #E09A4C;
+  --shade: #6A3A12;
+  --ornament: #E4B23A;
+  --on-ornament: #1E0E05;
+  --frost: #F4F0EC;
+  --mist: #CFB6A6;
+}
+:root {
+  --font-display: "Gloock", "Didot", "Bodoni 72", serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --space-2: 8px;
+  --space-3: 12px;
+  --mullion: 14px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --gutter: 72px;
+  --section: 112px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-sign: 4px;
+  --shadow-sign: 0 6px 14px -6px rgb(0 0 0 / 0.6);
+  --shadow-button: 0 6px 14px -8px rgb(0 0 0 / 0.55);
+  --gilt-shade: 2px 3px 0 0 #6B4A16;
+}

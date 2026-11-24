@@ -1,0 +1,17 @@
+<!-- @dsCard group="Wayfinding" height=150 -->
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:var(--sash,#06110E);font-family:"Hanken Grotesk",system-ui,sans-serif;display:flex;gap:40px;padding:38px 28px 24px}
+.hang{position:relative}
+.hang::before,.hang::after{content:"";position:absolute;top:-20px;width:1px;height:24px;background:var(--leaf,#DDB65C)}
+.hang::before{left:22%;transform:rotate(14deg);transform-origin:top}.hang::after{right:22%;transform:rotate(-14deg);transform-origin:top}
+.sign{display:block;min-width:150px;text-align:center;border:2px solid var(--leaf,#DDB65C);border-radius:var(--radius-sign,4px);padding:6px 14px 8px;line-height:1.3;box-shadow:var(--shadow-sign,0 6px 14px -6px rgb(0 0 0/.6))}
+.sign b{display:block;font-family:Gloock,serif;font-weight:400;font-size:24px}
+.sign span{font-size:12px;font-weight:600}
+.open{background:var(--ornament,#B0142F);color:var(--on-ornament,#F3F5F2)}
+.closed{background:var(--glass-2,#163D34);color:var(--frost,#EFF3F0)}
+</style></head><body>
+<div class="hang"><span class="sign open"><b>Open</b><span>until 5&nbsp;pm</span></span></div>
+<div class="hang"><span class="sign closed"><b>Closed</b><span>Opens Thursday at 10&nbsp;am</span></span></div>
+</body></html>

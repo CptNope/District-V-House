@@ -1,0 +1,38 @@
+name: Sync District V House photos
+
+# Copies the store's photos from its GoDaddy image CDN into assets/photos/
+# and points the pages at the local copies, so the site no longer depends on GoDaddy.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/photos/manifest.tsv"
+      - "scripts/fetch-photos.sh"
+      - "scripts/localize-photos.py"
+      - ".github/workflows/fetch-photos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: photo-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download photos
+        run: ./scripts/fetch-photos.sh
+      - name: Point pages at local photos
+        run: python3 scripts/localize-photos.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add assets/photos *.html brand design-system
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Sync store photos into assets/photos and use local copies"
+          git push

@@ -1,0 +1,16 @@
+<!-- @dsCard group="Seasons" height=150 -->
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:var(--ornament,#B0142F);color:var(--on-ornament,#F3F5F2);font-family:"Hanken Grotesk",system-ui,sans-serif;padding:24px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px}
+button{font:inherit;color:inherit;text-align:left;background:transparent;border:1.5px solid currentColor;border-radius:var(--radius-md,3px);padding:10px 10px 12px;display:flex;flex-direction:column;gap:8px;cursor:pointer}
+button[aria-pressed=true]{background:color-mix(in oklab,currentColor 14%,transparent)}
+.c{display:flex;height:30px;border-radius:2px;overflow:hidden}.c i{flex:1}
+b{font-size:15px}small{font-size:12px;opacity:.85}
+</style></head><body><div class="g">
+<button aria-pressed="true"><span class="c"><i style="background:#0D2A24"></i><i style="background:#DDB65C"></i><i style="background:#B0142F"></i></span><b>Holiday</b><small>Nov–Dec</small></button>
+<button aria-pressed="false"><span class="c"><i style="background:#0F1D33"></i><i style="background:#CBD4DF"></i><i style="background:#3E8FB8"></i></span><b>Winter</b><small>Jan–Mar</small></button>
+<button aria-pressed="false"><span class="c"><i style="background:#0C3A3A"></i><i style="background:#E8C25E"></i><i style="background:#E0507A"></i></span><b>Garden</b><small>Apr–Jul</small></button>
+<button aria-pressed="false"><span class="c"><i style="background:#2A1512"></i><i style="background:#E09A4C"></i><i style="background:#E4B23A"></i></span><b>Harvest</b><small>Aug–Oct</small></button>
+</div></body></html>

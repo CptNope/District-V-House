@@ -1,0 +1,28 @@
+<!-- @dsCard height=288 -->
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:288px;background:var(--frost,#EFF3F0)}
+.wrap{position:relative;width:960px;height:288px;overflow:hidden}
+.name{position:absolute;left:40px;bottom:40px;width:440px}
+.name h1{margin:0;font-family:Gloock,serif;font-weight:400;font-size:80px;line-height:.95;color:var(--sash,#06110E)}
+.name p{margin:16px 0 0;font-family:"Hanken Grotesk",sans-serif;font-size:14px;color:color-mix(in oklab,var(--sash,#06110E) 72%,var(--frost,#EFF3F0))}
+svg{position:absolute;left:480px;top:0;width:480px;height:288px}
+.glass{fill:var(--glass,#0D2A24)}.glass2{fill:var(--glass-2,#163D34)}.leaf{fill:var(--leaf,#DDB65C)}.orn{fill:var(--ornament,#B0142F)}.sash{fill:var(--sash,#06110E)}
+.shade{fill:var(--shade,#6B4A16)}
+.v{font-family:Gloock,serif}
+</style></head><body><div class="wrap">
+<div class="name"><h1>District V<br>House</h1><p>A designer's home store in the old Manchaug village store.</p></div>
+<svg viewBox="0 0 480 288" aria-hidden="true">
+<!-- blocks: sash ground 480×288; glass slab 258×288; leaf 194×124; ornament 108×136; glass-2 72×136 (sides from mullion 14 multiples)
+     arrangement: a storefront: one tall pane plus a transom and two lower panes, divided by mullion-wide sash bars
+     pattern: distinctive display face, one oversized Gloock "V" in leaf with its shade, clipped by the glass slab: the V is District 5
+     steps: mullion 14 (gaps), radius-sm 0 corners (square sash); no other radii -->
+<rect class="sash" x="0" y="0" width="480" height="288"/>
+<clipPath id="slab"><rect x="14" y="0" width="244" height="288"/></clipPath>
+<rect class="glass" x="14" y="0" width="244" height="288"/>
+<g clip-path="url(#slab)"><text class="v shade" x="140" y="300" font-size="330" text-anchor="middle" transform="translate(5 6)">V</text><text class="v leaf" x="140" y="300" font-size="330" text-anchor="middle">V</text></g>
+<rect class="leaf" x="272" y="0" width="208" height="124"/>
+<rect class="orn" x="272" y="138" width="108" height="150"/>
+<rect class="glass2" x="394" y="138" width="86" height="150"/>
+</svg></div></body></html>
