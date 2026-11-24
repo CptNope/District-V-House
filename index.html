@@ -118,12 +118,12 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   background: var(--sash); padding: var(--mullion);
   display:grid; gap: var(--mullion);
   grid-template-columns: 1.35fr 1fr 1fr;
-  grid-template-rows: auto minmax(240px, 1fr) auto;
-  height: max(640px, calc(100svh - 93px));
+  grid-template-rows: auto minmax(190px, 1fr) auto;
+  min-height: max(640px, calc(100svh - 93px));
 }
 .pane{ position:relative; overflow:hidden; background: var(--glass);
 }
-.transom{
+.transom{ overflow: visible;
   grid-column: 1 / -1; text-align:center; padding: clamp(14px,2vw,28px) var(--gutter) clamp(14px,1.8vw,24px);
 }
 .arch-title{ margin: 0; font-weight: 400; font-family: var(--display); font-size: calc(min(980px, 100vw - 2 * var(--gutter)) * 116 / 1100); line-height: 1; }
@@ -419,9 +419,8 @@ footer.foot .credit{ margin-left:auto; }
 <main id="main">
   <section class="window" id="top" aria-label="District V House storefront">
     <div class="pane transom">
-      <h1 class="arch-title">
-      <svg class="arch" viewBox="0 0 1100 200" focusable="false">
-        <title>District V House</title>
+      <h1 class="arch-title"><span class="sr-only">District V House</span>
+      <svg class="arch" viewBox="0 0 1100 200" focusable="false" aria-hidden="true">
         <defs><path id="arc" d="M60 182 Q550 22 1040 182"/></defs>
         <text class="t-gilt" font-size="116" text-anchor="middle"><textPath href="#arc" startOffset="50%">District V House</textPath></text>
       </svg>
