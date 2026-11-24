@@ -9,7 +9,8 @@ By [Jeremy Anderson Tech](https://jeremyanderson.tech).
 | **Site** | [`index.html`](index.html), a single self-contained page |
 | **Brand book** | [`brand/`](brand/index.html), with live component previews and the full photo library |
 | **Design system** | [`design-system/`](design-system): `tokens.json` (source), `tokens.css` (generated), `README.md` (brand book), `components/`, `cover/` |
-| **Docs** | [`docs/`](docs): product brief, DESIGN.md, direction contract, content audit, responsive audit, WordPress notes |
+| **Docs** | [`docs/`](docs): product brief, DESIGN.md, direction contract, content audit, responsive audit, [design taste audit](docs/design-taste-audit.md), [WCAG 2.2 AA audit](docs/wcag-aa-audit.md), WordPress notes |
+| **Fonts** | [`assets/fonts/`](assets/fonts): Gloock and Hanken Grotesk, self-hosted (SIL OFL) |
 | **Photos** | [`assets/photos/`](assets/photos): the store's own photos, synced from its GoDaddy site |
 
 ## GitHub Pages

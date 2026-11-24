@@ -9,9 +9,8 @@
 <meta property="og:title" content="District V House · Sutton, MA">
 <meta property="og:description" content="A designer's home store in the historic village of Manchaug. Antique, vintage, new and handmade, restyled every season.">
 <meta name="theme-color" content="#0D2A24">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/gloock-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,7 +68,7 @@ body{
 ::selection{ background: var(--leaf); color: var(--sash); }
 img{ display:block; max-width:100%; }
 a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
-:focus-visible{ outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 2px; }
+:focus-visible{ outline: 3px solid var(--sash); outline-offset: 2px; box-shadow: 0 0 0 2px var(--leaf); border-radius: 2px; } /* taste-skill-ignore: two-tone focus ring, a state not decoration (WCAG 2.4.7) */
 .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 .skip{ position:absolute; left:12px; top:-60px; z-index:50; background:var(--leaf); color:var(--sash); padding:10px 16px; font-weight:600; border-radius:2px; }
 .skip:focus{ top:12px; }
@@ -77,25 +76,24 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 /* gilt lettering: gold leaf with keyline and a painted drop shade, as on shop glass */
 .gilt{
   font-family: var(--display); font-weight: 400; color: var(--leaf);
-  text-shadow: 0 1px 0 color-mix(in oklab, var(--leaf) 60%, white), 2px 3px 0 var(--shade);
+  text-shadow: 0 1px 0 color-mix(in oklab, var(--leaf) 60%, white), 2px 3px 0 var(--shade); /* taste-skill-ignore: gilt shade (brand) */
   letter-spacing: -0.01em;
 }
-.caps{ font-family: var(--text); text-transform: uppercase; letter-spacing: .16em; font-weight: 600; font-size: .78rem; }
+.caps{ font-family: var(--text); text-transform: uppercase; letter-spacing: .16em; font-weight: 600; font-size: .875rem; }
 
 /* ── Sash header ─────────────────────────────────────────────────── */
 .sash{
   position: relative; z-index: 5; background: var(--sash);
   display:flex; align-items:center; gap: clamp(14px,3vw,40px);
-  padding: 14px var(--gutter);
-  border-bottom: var(--pin) solid color-mix(in oklab, var(--leaf) 45%, transparent);
+  padding: 14px calc(var(--mullion) + clamp(10px, 2vw, 30px));
 }
-.badge{ flex: none; width: 64px; height: 64px; border-radius: 50%; background:#fff; object-fit: contain; padding: 5px; box-shadow: 0 0 0 2px #fff; }
+.badge{ flex: none; width: 64px; height: 64px; border-radius: 50%; background:#fff; object-fit: contain; padding: 5px; }
 .badge-link{ display:flex; align-items:center; gap: 12px; text-decoration:none; }
 .badge-word{ font-family: var(--display); font-size: 1.15rem; line-height:1.05; color: var(--frost); }
-.badge-word small{ display:block; font-family: var(--text); font-size: .75rem; letter-spacing:.16em; text-transform:uppercase; color: var(--mist); }
+.badge-word small{ display:block; font-family: var(--text); font-size: .875rem; color: var(--mist); margin-top: 2px; }
 .nav{ margin-left:auto; display:flex; gap: clamp(14px,2.4vw,34px); }
-.nav a{ min-width: 44px; text-align:center; text-decoration:none; font-weight:500; font-size:.95rem; color: var(--frost); padding: 12px 0; border-bottom: 1px solid transparent; transition: border-color .3s, color .3s; }
-.nav a:hover{ color: var(--leaf); border-color: var(--leaf); }
+.nav a{ min-width: 44px; text-align:center; text-decoration:none; font-weight:500; font-size:.95rem; color: var(--frost); padding: 12px 0; text-decoration: underline 1px transparent; text-underline-offset: .45em; transition: text-decoration-color .3s, color .3s; }
+.nav a:hover{ color: var(--leaf); text-decoration-color: var(--leaf); }
 
 /* hanging open/closed sign */
 .hang{ position: relative; flex:none; padding-top: 2px; margin-right: 4px; }
@@ -107,11 +105,10 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   background: var(--orn); color: var(--on-orn);
   border: 2px solid var(--leaf); border-radius: 4px;
   padding: 6px 12px 8px; line-height: 1.3;
-  box-shadow: 0 6px 14px -6px rgb(0 0 0 / .6);
   transform-origin: 50% -20px;
 }
 .sign b{ display:block; font-family: var(--display); font-weight:400; font-size: 1.35rem; letter-spacing: .02em; }
-.sign span{ font-size: .78rem; font-weight:600; letter-spacing:.04em; }
+.sign span{ font-size: .82rem; font-weight:600; letter-spacing:.04em; }
 .sign[data-state="closed"]{ background: var(--glass2); color: var(--frost); }
 @keyframes swing{ 0%{transform:rotate(7deg)} 30%{transform:rotate(-4deg)} 55%{transform:rotate(2deg)} 78%{transform:rotate(-1deg)} 100%{transform:rotate(0)} }
 .sign.swing{ animation: swing 1.6s var(--ease) both; }
@@ -125,19 +122,15 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   height: max(640px, calc(100svh - 93px));
 }
 .pane{ position:relative; overflow:hidden; background: var(--glass);
-  box-shadow: inset 0 0 0 var(--pin) color-mix(in oklab, var(--leaf) 55%, transparent); }
+}
 .transom{
   grid-column: 1 / -1; text-align:center; padding: clamp(14px,2vw,28px) var(--gutter) clamp(14px,1.8vw,24px);
-  background:
-    radial-gradient(120% 140% at 50% 120%, color-mix(in oklab, var(--glass2) 90%, var(--leaf)) 0%, var(--glass) 62%);
 }
+.arch-title{ margin: 0; font-weight: 400; font-family: var(--display); font-size: calc(min(980px, 100vw - 2 * var(--gutter)) * 116 / 1100); line-height: 1; }
 .arch{ width: min(980px, 100%); height:auto; margin: 0 auto; display:block; overflow: visible; }
 .arch text{ font-family: var(--display); }
-.arch .t-shade{ fill: var(--shade); }
-.arch .t-gilt{ fill: var(--leaf); stroke: color-mix(in oklab, var(--leaf) 55%, white); stroke-width: .6; paint-order: stroke; }
-.where{ margin: clamp(2px,.6vw,10px) 0 0; color: var(--frost); }
-.where .caps{ font-size: clamp(.75rem, 1.1vw, .9rem); letter-spacing: .3em; }
-.where .rule{ display:inline-block; width: clamp(24px,5vw,70px); height:1px; background: var(--leaf); vertical-align: middle; margin: 0 14px; }
+.arch .t-gilt{ fill: var(--leaf); stroke: color-mix(in oklab, var(--leaf) 55%, white); stroke-width: .6; paint-order: stroke; filter: drop-shadow(3px 4px 0 var(--shade)); } /* taste-skill-ignore: painted drop shade of gilt sign lettering (brand) */
+.where{ margin: clamp(2px,.6vw,10px) 0 0; color: var(--frost); font-weight: 500; font-size: clamp(1rem, 1.3vw, 1.2rem); letter-spacing: .04em; }
 
 .display-pane img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -145,16 +138,15 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   transition: filter .55s var(--ease), transform 6s var(--ease);
 }
 .display-pane:hover img{ transform: scale(1.03); }
-.display-pane::after{ /* the glass itself: a dusk reflection streak and a low tint for the lettering */
+.display-pane::after{ /* neutral scrim so the painted captions stay legible on any photo */
   content:""; position:absolute; inset:0; pointer-events:none;
   background:
-    linear-gradient(115deg, transparent 0 38%, rgb(255 255 255 / .07) 42%, transparent 50% 100%),
-    linear-gradient(to top, color-mix(in oklab, var(--glass) 92%, transparent) 0%, transparent 46%);
+    linear-gradient(to top, color-mix(in oklab, var(--glass) 94%, transparent) 0%, /* taste-skill-ignore: neutral scrim under captions */ color-mix(in oklab, var(--glass) 78%, transparent) 26%, transparent 58%);
 }
 .display-pane figcaption{
   position:absolute; left: clamp(14px,2vw,26px); right: 14px; bottom: clamp(12px,1.8vw,22px); z-index:1;
   font-family: var(--display); font-size: clamp(1.25rem, 2.1vw, 1.9rem); line-height:1.1; color: var(--leaf);
-  text-shadow: 0 1px 0 color-mix(in oklab, var(--leaf) 60%, white), 2px 2px 0 var(--shade), 0 0 18px rgb(0 0 0 / .55);
+  text-shadow: 0 1px 0 color-mix(in oklab, var(--leaf) 60%, white), 2px 2px 0 var(--shade); /* taste-skill-ignore: gilt shade (brand) */
   text-wrap: balance;
 }
 .window.dim .display-pane img{ filter: brightness(.18) saturate(.6); }
@@ -163,7 +155,6 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   grid-column: 1 / -1; background: var(--glass2);
   display:grid; grid-template-columns: 1.35fr 1fr auto; align-items:center; gap: clamp(18px,3vw,44px);
   padding: clamp(20px,2.6vw,34px) clamp(20px,3vw,44px);
-  box-shadow: inset 0 0 0 var(--pin) color-mix(in oklab, var(--leaf) 55%, transparent);
 }
 .lede{ margin:0; font-size: clamp(1.05rem,1.35vw,1.25rem); line-height:1.45; max-width: 44ch; color: var(--frost); }
 .lede strong{ color: var(--leaf); font-weight:600; }
@@ -175,13 +166,14 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   display:inline-flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;
   font-family: var(--text); font-weight:600; font-size: 1rem; line-height:1;
   padding: 15px 22px; border-radius: 3px; border: 1.5px solid var(--leaf);
-  transition: background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+  transition: background-color .3s var(--ease), color .3s var(--ease), transform .2s var(--ease);
 }
 .btn svg{ width:18px; height:18px; flex:none; }
-.btn-gilt{ background: var(--leaf); color: var(--sash); box-shadow: 0 6px 14px -8px rgb(0 0 0 / .55); }
-.btn-gilt:hover{ transform: translateY(-1px); box-shadow: 0 10px 18px -8px rgb(0 0 0 / .6); }
-.btn-line{ background: transparent; color: var(--frost); }
-.btn-line:hover{ background: color-mix(in oklab, var(--leaf) 14%, transparent); }
+.btn-gilt{ background: var(--leaf); color: var(--sash); }
+.btn-gilt:hover{ background: color-mix(in oklab, var(--leaf) 86%, white); }
+.btn:active{ transform: translateY(1px) scale(.985); }
+.btn-line{ background: color-mix(in oklab, var(--frost) 12%, transparent); border-color: transparent; color: var(--frost); }
+.btn-line:hover{ background: color-mix(in oklab, var(--frost) 20%, transparent); }
 .btn-dark{ background: var(--sash); color: var(--leaf); border-color: var(--sash); }
 .btn-dark:hover{ background: var(--glass); }
 
@@ -197,16 +189,17 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 .swatches{ display:grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
 .swatch{
   appearance:none; cursor:pointer; text-align:left; font: inherit; color: inherit;
-  background: transparent; border: 1.5px solid currentColor; border-radius: 3px;
-  padding: 10px 10px 12px; display:flex; flex-direction:column; gap: 10px;
-  transition: transform .35s var(--ease), background-color .35s var(--ease);
+  background: none; border: 0; border-radius: 3px; min-height: 44px;
+  padding: 6px 2px 8px; display:flex; flex-direction:column; gap: 8px;
+  transition: transform .35s var(--ease);
 }
 .swatch:hover{ transform: translateY(-2px); }
-.swatch[aria-pressed="true"]{ background: color-mix(in oklab, currentColor 14%, transparent); }
-.swatch .chips{ display:flex; height: 34px; border-radius: 2px; overflow:hidden; box-shadow: 0 0 0 1px rgb(0 0 0 / .2); }
+.swatch[aria-pressed="true"] .chips{ outline: 3px solid currentColor; outline-offset: 3px; }
+.swatch[aria-pressed="true"] b{ text-decoration: underline 2px; text-underline-offset: .3em; }
+.swatch .chips{ display:flex; height: 44px; border-radius: 2px; overflow:hidden; }
 .swatch .chips i{ flex:1; }
-.swatch b{ font-weight:600; font-size:.95rem; }
-.swatch small{ font-size: .78rem; opacity:.85; margin-top:-8px; }
+.swatch b{ font-weight:600; font-size:1rem; }
+.swatch small{ font-size: .875rem; margin-top:-6px; }
 .now-showing{ margin-top: 14px; font-size: .92rem; }
 
 /* ── Collective ──────────────────────────────────────────────────── */
@@ -216,7 +209,7 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr);
 }
 .collective .photo{ position:relative; min-height: 520px; border-right: var(--mullion) solid var(--sash); }
-.collective .photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.collective .photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: 50% 70%; }
 .collective .copy{ padding: clamp(48px,7vw,104px) var(--gutter); }
 .collective h2{ margin:0 0 26px; font-family: var(--display); font-weight:400; font-size: clamp(2.3rem,4.6vw,4rem); line-height:1; letter-spacing:-.02em; color: var(--glass); text-wrap: balance; }
 .quote{ margin: 0 0 28px; padding: 0; }
@@ -227,21 +220,20 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 .tag{
   position: relative; display:inline-flex; align-items:center;
   padding: 8px 16px 8px 30px; font-weight:600; font-size: .92rem; color: var(--sash);
-  background: color-mix(in oklab, var(--leaf) 30%, var(--frost));
-  border: 1px solid color-mix(in oklab, var(--shade) 55%, transparent);
+  background: color-mix(in oklab, var(--leaf) 34%, var(--frost));
   clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
 }
-.tag::before{ content:""; position:absolute; left: 13px; top: 50%; width: 7px; height:7px; margin-top:-3.5px; border-radius:50%; background: var(--frost); box-shadow: inset 0 0 0 1.5px var(--shade); }
+.tag::before{ content:""; position:absolute; left: 13px; top: 50%; width: 7px; height:7px; margin-top:-3.5px; border-radius:50%; background: var(--frost); border: 1.5px solid var(--shade); }
 .tags li:nth-child(3n+2){ transform: rotate(-2deg) translateY(2px); }
 .tags li:nth-child(4n+3){ transform: rotate(1.6deg); }
 .made-here{
-  border-top: 1px solid color-mix(in oklab, var(--sash) 22%, transparent);
-  padding-top: 22px; display:grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items:baseline; max-width: 60ch;
+  margin-top: 8px; padding: 20px 22px; background: color-mix(in oklab, var(--leaf) 16%, var(--frost)); display:grid; grid-template-columns: 1fr auto; gap: 6px 18px; align-items:baseline; max-width: 60ch;
 }
-.made-here .price{ font-family: var(--display); font-size: 1.9rem; color: color-mix(in oklab, var(--orn) 62%, var(--sash)); line-height:1; grid-row: span 2; }
-.made-here b{ font-weight:700; }
-.made-here span{ color: color-mix(in oklab, var(--sash) 80%, var(--frost)); font-size:.98rem; }
-.vendor-note{ margin: 26px 0 0; font-size: .98rem; color: color-mix(in oklab, var(--sash) 82%, var(--frost)); max-width: 58ch; }
+.made-here .price{ font-family: var(--text); font-weight: 700; font-size: 1.0625rem; color: color-mix(in oklab, var(--orn) 62%, var(--sash)); justify-self: end; }
+.made-here .desc{ grid-column: 1 / -1; }
+.made-here b{ font-weight:700; font-size: 1.0625rem; }
+.made-here span{ color: color-mix(in oklab, var(--sash) 82%, var(--frost)); font-size:1.0625rem; }
+.vendor-note{ margin: 26px 0 0; font-size: 1.0625rem; color: color-mix(in oklab, var(--sash) 82%, var(--frost)); max-width: 58ch; }
 .vendor-note a{ font-weight:600; color: var(--glass); }
 
 /* ── Design studio ───────────────────────────────────────────────── */
@@ -255,14 +247,14 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
   opacity: .16; pointer-events:none; user-select:none;
 }
 .studio h2{ position:relative; margin:0 0 22px; font-size: clamp(2.6rem,5.4vw,4.8rem); line-height: .98; letter-spacing:-.02em; text-wrap: balance; }
-.route{ position:relative; display:flex; align-items:center; gap: 12px; margin: 0 0 26px; color: var(--mist); }
+.route{ position:relative; display:flex; align-items:center; gap: 12px; margin: 0 0 26px; color: var(--mist); font-weight: 600; font-size: 1.0625rem; }
 .route svg{ width: clamp(90px,14vw,170px); height: 14px; flex:none; }
 .studio .body{ position:relative; max-width: 54ch; margin: 0 0 18px; color: var(--frost); }
 .studio .body + .body{ color: var(--mist); }
 .studio .actions{ position:relative; margin-top: 28px; }
 .studio .photo{ position:relative; min-height: 560px; border-left: var(--mullion) solid var(--sash); }
 .studio .photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.studio .photo figcaption{ position:absolute; left: 18px; bottom: 16px; right: 18px; color: var(--frost); font-size: .85rem; text-shadow: 0 1px 8px rgb(0 0 0 / .7); }
+.studio .photo figcaption{ position:absolute; left: 0; bottom: 0; padding: 10px 16px; background: var(--glass); color: var(--frost); font-size: .9375rem; }
 
 /* ── Stroll (events) ─────────────────────────────────────────────── */
 .stroll{
@@ -271,14 +263,9 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 }
 .stroll .night{ grid-column: 1 / span 6; position:relative; min-height: 540px; overflow:hidden; background: var(--glass); }
 .stroll .night img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: brightness(.82); }
-.stroll .night::after{ content:""; position:absolute; inset:0; background: linear-gradient(to right, transparent 40%, color-mix(in oklab, var(--sash) 70%, transparent)); }
 .stroll .card{ grid-column: 7 / -1; background: var(--glass2); padding: clamp(40px,5vw,72px) clamp(24px,4vw,60px); display:flex; flex-direction:column; justify-content:center;
-  box-shadow: inset 0 0 0 var(--pin) color-mix(in oklab, var(--leaf) 55%, transparent); }
+}
 .stroll h2{ margin: 0 0 18px; font-size: clamp(2.4rem,4.4vw,4rem); line-height:1; letter-spacing:-.02em; }
-.stroll .when{ display:flex; flex-wrap:wrap; gap: 8px 22px; margin: 0 0 20px; padding: 14px 0; border-block: 1px solid color-mix(in oklab, var(--leaf) 40%, transparent); }
-.stroll .when div{ display:flex; flex-direction:column; }
-.stroll .when dt{ font-size: .74rem; letter-spacing:.16em; text-transform:uppercase; color: var(--mist); font-weight:600; }
-.stroll .when dd{ margin:0; font-family: var(--display); font-size: 1.45rem; color: var(--leaf); }
 .stroll p{ margin: 0 0 16px; max-width: 50ch; color: var(--frost); }
 .stroll .aside{ color: var(--mist); font-size: .98rem; }
 .stroll .actions{ margin-top: 10px; }
@@ -293,7 +280,7 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 .visit h2{ margin:0 0 16px; font-family: var(--display); font-weight:400; font-size: clamp(3rem,7vw,6rem); line-height:.92; letter-spacing:-.03em; color: var(--sash); }
 .visit address{ font-style:normal; font-size: 1.2rem; line-height:1.45; margin: 0 0 22px; }
 .visit address small{ display:block; font-size: .88rem; margin-top: 6px; color: color-mix(in oklab, var(--sash) 78%, var(--leaf)); }
-.visit h3{ margin: 6px 0 12px; font-size: .78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+.visit h3{ margin: 6px 0 12px; font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; }
 .hours{ width:100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .hours th, .hours td{ text-align:left; padding: 9px 0; border-bottom: 1px solid color-mix(in oklab, var(--sash) 22%, transparent); font-weight:500; }
 .hours td{ text-align:right; }
@@ -301,8 +288,8 @@ a{ color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px;
 .hours tr.today th, .hours tr.today td{ font-weight:700; }
 .hours tr.today th::after{ content:"Today"; margin-left: 10px; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; padding: 2px 7px; border-radius: 2px; background: var(--sash); color: var(--leaf); vertical-align: 2px; }
 .contact-list{ list-style:none; margin:0; padding:0; display:grid; gap: 2px; }
-.contact-list a{ display:inline-flex; min-height: 44px; gap: 10px; align-items:center; font-weight:600; text-decoration:none; border-bottom: 1px solid color-mix(in oklab, var(--sash) 35%, transparent); padding-bottom: 2px; }
-.contact-list a:hover{ border-color: var(--sash); }
+.contact-list a{ display:inline-flex; min-height: 44px; gap: 10px; align-items:center; font-weight:600; text-decoration: underline 1px; text-underline-offset: .3em; text-decoration-color: color-mix(in oklab, var(--sash) 45%, transparent); }
+.contact-list a:hover{ text-decoration-color: var(--sash); }
 .contact-list svg{ width:18px; height:18px; flex:none; }
 
 footer.foot{
@@ -316,24 +303,24 @@ footer.foot .credit{ margin-left:auto; }
 /* ── Small-screen menu & quick-action dock ──────────────────────── */
 .menu-btn{ display:none; align-items:center; gap:8px; min-height:44px; padding: 0 14px; border:1.5px solid color-mix(in oklab, var(--leaf) 70%, transparent); border-radius:3px; background:transparent; color: var(--frost); font: 600 .95rem var(--text); cursor:pointer; }
 .menu-btn svg{ width:18px; height:18px; }
-.mnav{ position:absolute; left:0; right:0; top:100%; background: var(--sash); border-bottom: var(--pin) solid color-mix(in oklab, var(--leaf) 45%, transparent); padding: 6px var(--gutter) 18px; display:grid; }
+.mnav{ position:absolute; left:0; right:0; top:100%; background: var(--sash); padding: 6px var(--gutter) 22px; display:grid; gap: 2px; }
 .mnav[hidden]{ display:none; }
-.mnav a{ font-family: var(--display); font-size: 1.6rem; color: var(--leaf); text-decoration:none; padding: 10px 0; border-bottom: 1px solid color-mix(in oklab, var(--leaf) 22%, transparent); }
-.dock{ position:fixed; z-index:20; left:0; right:0; bottom:0; display:none; gap:8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--sash); border-top: var(--pin) solid color-mix(in oklab, var(--leaf) 50%, transparent); transform: translateY(110%); transition: transform .45s var(--ease); }
+.mnav a{ font-family: var(--display); font-size: 1.6rem; color: var(--leaf); text-decoration:none; padding: 10px 0; min-height: 48px; }
+.dock{ position:fixed; z-index:20; left:0; right:0; bottom:0; display:none; gap:8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--sash); transform: translateY(110%); transition: transform .45s var(--ease); }
 .dock.show{ transform:none; }
 .dock .btn{ flex:1; justify-content:center; padding: 13px 10px; }
 
 /* ── Season events list ─────────────────────────────────────────── */
 .events{ list-style:none; margin: 0 0 18px; padding:0; display:grid; }
-.events li{ display:grid; grid-template-columns: 6.2rem 1fr; gap: 4px 18px; padding: 16px 0; border-top: 1px solid color-mix(in oklab, var(--leaf) 30%, transparent); }
-.events li:last-child{ border-bottom: 1px solid color-mix(in oklab, var(--leaf) 30%, transparent); }
+.events{ gap: 22px; }
+.events li{ display:grid; grid-template-columns: 6.4rem 1fr; gap: 4px 18px; }
 .events .d{ grid-row: span 2; font-family: var(--display); color: var(--leaf); font-size: 1.35rem; line-height:1.1; }
-.events .d small{ display:block; font-family: var(--text); font-size: .8rem; letter-spacing:.06em; color: var(--mist); margin-top: 4px; }
+.events .d small{ display:block; font-family: var(--text); font-size: .875rem; color: var(--mist); margin-top: 4px; }
 .events b{ font-weight:600; font-size: 1.08rem; color: var(--frost); }
-.events span{ color: var(--mist); font-size: .98rem; }
-.wreath{ margin: 0 0 18px; padding: 16px 18px; background: color-mix(in oklab, var(--sash) 40%, transparent); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--leaf) 40%, transparent); }
+.events span{ color: var(--mist); font-size: 1.0625rem; }
+.wreath{ margin: 6px 0 22px; padding: 18px 20px; background: var(--glass); }
 .wreath b{ font-family: var(--display); font-weight:400; color: var(--leaf); font-size: 1.3rem; display:block; margin-bottom: 4px; }
-.wreath p{ margin:0; color: var(--frost); font-size: .98rem; }
+.wreath p{ margin:0; color: var(--frost); font-size: 1.0625rem; }
 .review{ margin: 26px 0 0; font-size: 1rem; }
 .review q{ font-family: var(--display); font-size: 1.35rem; }
 .review cite{ display:block; font-style:normal; font-size:.88rem; margin-top: 4px; color: color-mix(in oklab, var(--sash) 78%, var(--leaf)); }
@@ -350,21 +337,23 @@ footer.foot .credit{ margin-left:auto; }
 @media (max-width: 820px), (max-height: 520px){
   .dock{ display:flex; }
   body{ padding-bottom: 76px; }
+  html{ scroll-padding-bottom: 96px; }
 }
 @media (max-width: 820px){
-  .badge-word{ display:none; }
-  .sash{ gap: 10px; }
+  .badge-word{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .sash{ gap: 10px; flex-wrap: wrap; }
+  .menu-btn{ margin-left: auto; }
   .badge{ width: 54px; height: 54px; }
   .sign{ min-width: 0; padding: 5px 10px 6px; }
   .sign b{ font-size: 1.15rem; }
-  .where .caps{ font-size: .75rem; }
   .window{ grid-template-columns: 1fr; grid-template-rows: auto auto auto; height: auto; }
-  .panes{ display:flex; gap: var(--mullion); overflow-x:auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-  .panes::-webkit-scrollbar{ display:none; }
-  .panes .display-pane{ flex: 0 0 82%; height: 44vh; max-height: 400px; scroll-snap-align: center; }
-  .where .rule{ display:none; }
-  .where .caps{ letter-spacing: .2em; }
-  .bulkhead{ grid-template-columns: 1fr; }
+  .panes{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--mullion); }
+  .panes .display-pane{ height: 30vh; min-height: 170px; max-height: 240px; }
+  .panes .display-pane:first-child{ grid-column: 1 / -1; height: 42vh; max-height: 360px; }
+  .window .bulkhead{ order: 2; }
+  .window .panes{ order: 3; }
+  .panes .display-pane:not(:first-child) figcaption{ font-size: 1.05rem; right: 10px; left: 12px; bottom: 10px; }
+    .bulkhead{ grid-template-columns: 1fr; }
   .season, .collective, .studio{ grid-template-columns: 1fr; }
   .collective .photo{ min-height: 320px; border-right:0; border-bottom: var(--mullion) solid var(--sash); }
   .studio .photo{ min-height: 360px; border-left:0; border-top: var(--mullion) solid var(--sash); order: 2; }
@@ -375,6 +364,13 @@ footer.foot .credit{ margin-left:auto; }
   footer.foot .credit{ margin-left:0; }
 }
 @media (min-width: 821px){ .panes{ display: contents; } }
+/* ── Motion: section parts rise in once; the window settles on load ── */
+.motion .rise{ opacity: 0; transform: translateY(26px); }
+.motion .rise.in{ opacity: 1; transform: none; transition: opacity .7s var(--ease) var(--d, 0ms), transform .9s var(--ease) var(--d, 0ms); }
+@keyframes settle{ from{ transform: scale(1.07); } to{ transform: scale(1); } }
+.motion .display-pane img{ animation: settle 2.4s var(--ease) both; }
+.motion .display-pane:nth-child(2) img{ animation-delay: .12s; }
+.motion .display-pane:nth-child(3) img{ animation-delay: .24s; }
 @media (prefers-reduced-motion: reduce){
   html{ transition:none; scroll-behavior:auto; }
   .sign.swing{ animation:none; }
@@ -396,7 +392,7 @@ footer.foot .credit{ margin-left:auto; }
 </svg>
 
 <header class="sash">
-  <a class="badge-link" href="#top" aria-label="District V House home">
+  <a class="badge-link" href="#top">
     <img class="badge" src="assets/photos/District-3.png" alt="" width="64" height="64">
     <span class="badge-word">District V House<small>&amp; District V Design</small></span>
   </a>
@@ -423,13 +419,14 @@ footer.foot .credit{ margin-left:auto; }
 <main id="main">
   <section class="window" id="top" aria-label="District V House storefront">
     <div class="pane transom">
-      <h1 class="sr-only">District V House, Manchaug Village, Sutton, Massachusetts</h1>
-      <svg class="arch" viewBox="0 0 1100 200" role="img" aria-label="District V House">
+      <h1 class="arch-title">
+      <svg class="arch" viewBox="0 0 1100 200" focusable="false">
+        <title>District V House</title>
         <defs><path id="arc" d="M60 182 Q550 22 1040 182"/></defs>
-        <text class="t-shade" font-size="116" text-anchor="middle" transform="translate(3 4)"><textPath href="#arc" startOffset="50%">District V House</textPath></text>
         <text class="t-gilt" font-size="116" text-anchor="middle"><textPath href="#arc" startOffset="50%">District V House</textPath></text>
       </svg>
-      <p class="where"><span class="rule"></span><span class="caps">Manchaug Village · Sutton, Massachusetts</span><span class="rule"></span></p>
+      </h1>
+      <p class="where">A designer’s home store in Manchaug Village, Sutton, Massachusetts</p>
     </div>
 
     <div class="panes">
@@ -442,7 +439,7 @@ footer.foot .credit{ margin-left:auto; }
       <p class="lede">Antique, vintage, old, new &amp; handmade home goods from a collective of makers, styled by a designer inside the <strong>historic Manchaug Company Store</strong>.</p>
       <p class="hours-now"><span class="big" id="today-hours">Thursday–Saturday 10–5</span><span class="small" id="today-sub">Sunday 11–4 · Closed Monday–Wednesday</span></p>
       <div class="actions">
-        <a class="btn btn-gilt" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+        <a class="btn btn-gilt" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions<span class="sr-only"> (opens in a new tab)</span></a>
         <a class="btn btn-line" href="tel:+17743140022"><svg aria-hidden="true"><use href="#i-phone"/></svg>(774) 314-0022</a>
       </div>
     </div>
@@ -478,11 +475,11 @@ footer.foot .credit{ margin-left:auto; }
         <li class="tag">Artisan</li><li class="tag">Art</li><li class="tag">Furniture</li><li class="tag">Lighting</li><li class="tag">Rugs</li><li class="tag">Plants</li><li class="tag">Home accessories</li><li class="tag">Gifts</li>
       </ul>
       <div class="made-here">
-        <span class="price">$50</span>
         <b>District V Designer Wall Decals</b>
-        <span>Atomic Star, Penny and Drip Drop. Removable and reusable; two sheets of 24 per pack. Designed by Jamie.</span>
+        <span class="price">$50</span>
+        <span class="desc">Atomic Star, Penny and Drip Drop. Removable and reusable; two sheets of 24 per pack. Designed by Jamie.</span>
       </div>
-      <p class="vendor-note">Want to vend? We're at max capacity, with a wait list of over 200 vendors. We only take home decor and home lifestyle vendors with an active Instagram that shows how they curate (no multi-level marketing). The wait-list application is in <a href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener">our Instagram bio</a>; we'll reach out when a spot opens that's a perfect fit.</p>
+      <p class="vendor-note">Want to vend? We're at max capacity, with a wait list of over 200 vendors. We only take home decor and home lifestyle vendors with an active Instagram that shows how they curate (no multi-level marketing). The wait-list application is in <a href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener">our Instagram bio<span class="sr-only"> (opens in a new tab)</span></a>; we'll reach out when a spot opens that's a perfect fit.</p>
     </div>
   </section>
 
@@ -490,7 +487,7 @@ footer.foot .credit{ margin-left:auto; }
     <div class="copy">
       <span class="numeral gilt" aria-hidden="true">V</span>
       <h2 class="gilt" id="studio-h">Born in District&nbsp;5.</h2>
-      <p class="route caps"><span>Worcester</span>
+      <p class="route"><span>Worcester</span>
         <svg viewBox="0 0 170 14" aria-hidden="true"><path d="M2 7h160" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/><path d="m158 2 6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Manchaug</span></p>
       <p class="body">The V is Worcester's District 5, where Jamie Harrity Burke was born and raised. She's a self-taught designer who has been arranging rooms since she was four or five. Through District V Design she works with residential and commercial clients and gives each space a story about the people in it.</p>
@@ -517,7 +514,7 @@ footer.foot .credit{ margin-left:auto; }
       </ul>
       <div class="wreath"><b>The Wreath Bar</b><p>Pick a wreath in any style, size or price, then dress it with ribbons, bows, greenery and ornaments. Make it here with our help, or take your picks home.</p></div>
       <div class="actions">
-        <a class="btn btn-line" href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cam"/></svg>Follow @districtvhouse</a>
+        <a class="btn btn-line" href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cam"/></svg>Follow @districtvhouse<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
   </section>
@@ -526,7 +523,7 @@ footer.foot .credit{ margin-left:auto; }
     <div>
       <h2 id="visit-h">Come shop.</h2>
       <address>356 Manchaug Road<br>Sutton, MA 01590<small>In the historic Manchaug Company Store, overlooking the Mumford River. One mile from Route 146, near 290 and 395, a short drive from Worcester. Mailing: P.O. Box 507</small></address>
-      <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Get directions</a>
+      <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Get directions<span class="sr-only"> (opens in a new tab)</span></a>
       <p class="review"><q>I drive by this store pretty frequently and never knew what it was… the shop is absolutely beautiful!!!</q><cite>Review on Yelp</cite></p>
     </div>
     <div>
@@ -548,9 +545,9 @@ footer.foot .credit{ margin-left:auto; }
       <ul class="contact-list">
         <li><a href="tel:+17743140022"><svg aria-hidden="true"><use href="#i-phone"/></svg>(774) 314-0022</a></li>
         <li><a href="mailto:districtvdesign@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>districtvdesign@gmail.com</a></li>
-        <li><a href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cam"/></svg>Instagram @districtvhouse</a></li>
-        <li><a href="https://www.facebook.com/Districtvdesign/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Facebook</a></li>
-        <li><a href="https://www.pinterest.com/districtvdesign/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Pinterest</a></li>
+        <li><a href="https://www.instagram.com/districtvhouse/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cam"/></svg>Instagram @districtvhouse<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.facebook.com/Districtvdesign/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Facebook<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.pinterest.com/districtvdesign/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Pinterest<span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
     </div>
   </section>
@@ -563,10 +560,10 @@ footer.foot .credit{ margin-left:auto; }
   <p class="credit"><a href="brand/">Brand book</a> · Concept by Jeremy Anderson Tech · Photos: District V House</p>
 </footer>
 
-<div class="dock" id="dock" aria-label="Quick actions">
-  <a class="btn btn-gilt" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+<aside class="dock" id="dock" aria-label="Quick actions">
+  <a class="btn btn-gilt" href="https://www.google.com/maps/dir/?api=1&amp;destination=356+Manchaug+Road+Sutton+MA+01590" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions<span class="sr-only"> (opens in a new tab)</span></a>
   <a class="btn btn-line" href="tel:+17743140022"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
-</div>
+</aside>
 
 <script>
 (() => {
@@ -629,6 +626,22 @@ footer.foot .credit{ margin-left:auto; }
   const dock = document.getElementById('dock'); const seen = new Map();
   const io = new IntersectionObserver(es => { es.forEach(e => seen.set(e.target, e.target.id === 'visit' ? e.isIntersecting : e.intersectionRatio > .95)); dock.classList.toggle('show', ![...seen.values()].some(Boolean)); }, { threshold: [0, .5, 1] });
   [document.querySelector('.bulkhead .btn-gilt'), document.getElementById('visit')].forEach(el => { seen.set(el, false); io.observe(el); });
+  // keyboard focus never sits under the dock (WCAG 2.4.11)
+  document.addEventListener('focusin', e => {
+    if (dock.contains(e.target) || getComputedStyle(dock).display === 'none') return;
+    const r = e.target.getBoundingClientRect(), top = innerHeight - dock.offsetHeight;
+    if (r.bottom > top - 8) window.scrollBy({ top: r.bottom - top + 24, behavior: 'instant' });
+  });
+
+  // entrances: every section's parts rise in once, staggered; skipped for reduced motion
+  if (!reduce && 'IntersectionObserver' in window){
+    root.classList.add('motion');
+    const parts = document.querySelectorAll('main > section:not(.window) :is(h2, p, blockquote, ul, figure, .actions, .made-here, .swatches, .wreath, address, table)');
+    const seenSec = new WeakMap();
+    parts.forEach(el => { const sec = el.closest('section'); const i = seenSec.get(sec) || 0; seenSec.set(sec, i + 1); el.classList.add('rise'); el.style.setProperty('--d', Math.min(i, 6) * 75 + 'ms'); });
+    const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    parts.forEach(el => rio.observe(el));
+  }
 
   // Real time in Sutton, MA
   const fmt = new Intl.DateTimeFormat('en-US', {timeZone:'America/New_York', weekday:'short', hour:'numeric', minute:'numeric', month:'numeric', year:'numeric', hourCycle:'h23'});

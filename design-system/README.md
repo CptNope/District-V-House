@@ -54,7 +54,7 @@ Warm, direct, a little bit city. Talk like Jamie on the shop floor, not like a c
 Every color token has four themes: **Holiday** (Nov–Dec), **Winter** (Jan–Mar), **Garden** (Apr–Jul) and **Harvest** (Aug–Oct). The site picks the season from the date and lets visitors restyle it.
 
 - `glass` is the dominant ground; `glass-2` is the bulkhead and cards.
-- `sash` draws every mullion between panes and sections. Mullions are layout, not decoration: sections are separated by a `mullion`-wide sash bar, never by a thin gray line.
+- `sash` draws every mullion between panes and sections. Mullions are layout, not decoration: sections are separated by a `mullion`-wide sash bar, never by a thin line. No hairline rules, keylines or outlined boxes anywhere (real tables excepted).
 - `leaf` is gilt: lettering, primary buttons, 1px keylines inside panes, and the gold Visit band.
 - `ornament` carries one full-width band per page (the season band) and the OPEN sign. Text on it is always `on-ornament`.
 - `frost` is body text on glass and the light ground for the Collective section; `mist` is secondary text on glass.
@@ -64,8 +64,8 @@ Every color token has four themes: **Holiday** (Nov–Dec), **Winter** (Jan–Ma
 
 - **Gloock** (`display`) is the sign-painter's gilt. It matches the high-contrast serif of the HOUSE badge. Use it for the arched name, headings, pane captions, quotes and status lines. No italics.
 - **Hanken Grotesk** (`text`) for everything set: body, buttons, labels, tables.
-- Gilt lettering = `leaf` fill + a 1px lighter top keyline + `gilt-shade` drop shade in the season's `shade`. Only on dark grounds (`glass`, `glass-2`, photos with the glass scrim).
-- Uppercase tracked labels (`label-caps`, 0.16–0.3em) only for small signage lines such as "Manchaug Village · Sutton, Massachusetts" and form-like headers (Hours). Never above a heading as an eyebrow.
+- Gilt lettering = `leaf` fill + a 1px lighter top keyline + `gilt-shade` drop shade in the season's `shade`. Only on dark grounds (`glass`, `glass-2`, photos with the glass scrim). The painted shade is the one shadow in the system; surfaces, buttons and signs are flat.
+- Sentence case everywhere. No tracked uppercase labels and no eyebrow labels above headings; nothing meant to be read is under 13px.
 - Numbers in hours tables use tabular figures.
 
 ### Layout
@@ -92,11 +92,11 @@ The black-and-white badge (small DISTRICT V over a large serif HOUSE between two
 
 ### Motion
 
-One authored moment: when the season changes, the window's lights go down, the floor is restyled, and the lights come back up (about 1.4 s, ease-out). The hanging sign swings once on load. Both are off under `prefers-reduced-motion`.
+One authored moment, plus quiet entrances (section parts rise 26px and fade in once, 75ms apart) and a one-time settle of the window photos on load. When the season changes, the window's lights go down, the floor is restyled, and the lights come back up (about 1.4 s, ease-out). The hanging sign swings once on load. Both are off under `prefers-reduced-motion`.
 
 ### Accessibility
 
-Body text is 4.5:1 or better on its ground in every season. Gilt and frost on glass are 8:1 or better. The OPEN sign text is announced politely. Focus rings are 2px `leaf` and visible on every ground. Tap targets are 44px or more.
+Body text is 4.5:1 or better on its ground in every season. Gilt and frost on glass are 8:1 or better. The OPEN sign text is announced politely. Focus rings are two-tone (3px `sash` outline plus a 2px `leaf` ring) so they show on dark, light and gold grounds. Tap targets are 44px or more.
 
 ## Components
 

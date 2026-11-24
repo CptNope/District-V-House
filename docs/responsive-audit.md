@@ -6,7 +6,8 @@ Measured in a real browser at 320×568, 360×740, 375×812, 390×844, 414×896, 
 | Finding | Fix |
 |---|---|
 | No navigation below 1080px | Menu button with a full-width dropdown (Esc closes, links close it) |
-| Get directions below the fold on phones and phone landscape | Fixed Directions / Call dock that appears whenever the window's Get directions button is not fully visible and the Visit band is off screen |
+| Get directions below the fold on phones and phone landscape | Hours-and-directions bulkhead moved directly under the name on phones, plus a Directions / Call dock that appears whenever those buttons scroll away (and never covers keyboard focus) |
+| Sideways-scrolling photo strip on phones (read as clipped; not keyboard reachable) | Grid: one wide photo, two half-width below |
 | Contact links 30px tall | 44px minimum |
 | Nav links under 44px wide | 44px minimum width |
 | Labels at 11.2–11.5px | 12px minimum |
